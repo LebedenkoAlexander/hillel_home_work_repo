@@ -4,10 +4,10 @@
 const operandsAction = requestActionFromUser(
   "Please enter action you want to do: +, -, /, *.\r\nIf any troubless with the input we will request you again."
 );
-const actionsCount = requestActionsCount(
-  "Please specify how much times you want do the requested action.\r\nImportant! 1 or more is expected.\r\nIf any troubless with the input we will request you again."
+
+const operandsArray = requestOperands(
+  "Please enter operands separated by ','. Example: 4, 10, -15\r\nIf any troubless with the input we will request you again."
 );
-const operandsArray = requestOperands(actionsCount);
 const resultOfActionsForOperands = doMath(operandsAction, operandsArray);
 const operandsActionResultLine = returnActionResultLine(
   operandsAction,
@@ -23,40 +23,37 @@ function requestActionFromUser(title) {
   do {
     requestResult = prompt(title);
   } while (
-    requestResult === null ||
-    requestResult === "" ||
+    isNullOrEmptyString(requestResult) ||
     !/^[\/\+\-\*]+$/.test(requestResult)
   );
   return requestResult;
 }
 
-function requestActionsCount(title) {
-  let requestResult;
-  do {
-    requestResult = prompt(title);
-  } while (
-    requestResult === null ||
-    requestResult === "" ||
-    isNaN(+requestResult) ||
-    +requestResult <= 0
-  );
-  return +requestResult;
-}
-
-function requestOperands(operandsAmount) {
-  let operandsArray = [];
-  let requestResult;
-  for (let i = 0; i <= operandsAmount; i++) {
-    do {
-      requestResult = prompt(`Please enter operand № ${i + 1}`);
-    } while (
-      requestResult === null ||
-      requestResult === "" ||
-      isNaN(+requestResult)
-    );
-    operandsArray.push(+requestResult);
+function requestOperands(title) {
+  let userReply;
+  let operandsArray = null;
+  while (operandsArray === null) {
+    userReply = prompt(title);
+    if (!isNullOrEmptyString(userReply)) {
+      operandsArray = convertToNumberArray(userReply);
+    }
   }
   return operandsArray;
+}
+
+function convertToNumberArray(arrayString) {
+  let resultArray = arrayString.split(",");
+  for (let i = 0; i < resultArray.length; i++) {
+    if (isNaN(resultArray[i])) return null;
+    else {
+      resultArray.splice(i, 1, +resultArray[i]);
+    }
+  }
+  return resultArray;
+}
+
+function isNullOrEmptyString(requestResult) {
+  return requestResult === null || requestResult.trim() === "";
 }
 
 function doMath(mathAction, operandsArray) {
