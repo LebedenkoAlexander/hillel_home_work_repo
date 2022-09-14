@@ -41,13 +41,13 @@ function calculateStudentAverageMark(student) {
 }
 
 function calculateGroupAverageMark(students) {
-  return (
-    students.reduce(
-      (avarageMarkOfAStudent, student) =>
-        avarageMarkOfAStudent + calculateStudentAverageMark(student),
-      0
-    ) / students.length
-  );
+  let marksCount = 0;
+  let summOfMarks = 0;
+  students.forEach((student) => {
+    summOfMarks += student.marks.reduce((acc, mark) => acc + mark);
+    marksCount += student.marks.length;
+  });
+  return summOfMarks / marksCount;
 }
 
 function displayAvarageMark(name, mark) {
