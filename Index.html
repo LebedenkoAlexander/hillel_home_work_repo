@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./js/script.js" defer></script>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Document</title>
-</head>
-<body>
-    <div id="body__inputed-data">
-    </div>
-    <form id="body__input-form">
-        <label for=""></label>
-        <input type="text" name="firstName" id="">
-        <label for=""></label>
-        <input type="text" name="secondName" id="">
-        <label for=""></label>
-        <input type="text" name="number" id="">
-        <label for=""></label>
-        <input type="text" name="action" id="">
-        <input type="button" value="Add entry">
+  </head>
+  <body>
+    <form id="contacts-form" class="contacts-form">
+
+      <div id="contacts-form__labels" class="contacts-form__labels">
+        <label for="labels__first-name">First name</label>
+        <label for="labels__second-name">Second name</label>
+        <label for="labels__number">Number</label>
+        <label for="labels__action">Action</label>
+      </div>
+
+      <div id="contacts-form__data" class="contacts-form__data"></div>
+
+      <div id="contacts-form__inputs" class="contacts-form__inputs">
+        <input id="inputs__first-name" type="text" name="firstName" />
+        <input id="inputs__second-name" type="text" name="secondName" />
+        <input id="inputs__number" type="text" name="number" />
+        <input id="inputs__action" type="text" name="action" />
+      </div>
+
+      <input
+        type="button"
+        value="Add entry"
+        id="contacts-form__create-button"
+      />
+
     </form>
-    <div id="input-form-template" type="template">
-        <span>___firstName___</span>
-        <span>___secondName</span>
-        <span>___number___</span>
-        <span>___action___</span>
-    </div>
-</body>
+    <script type="text/template" id="contacts-form-template">
+      <div class="data__entry">
+        <span>{{firstName}}</span>
+        <span>{{secondName}}</span>
+        <span>{{number}}</span>
+        <span>{{action}}</span>
+        <input id="data__entry-delete-button" type="button" value="Delete">
+        <input id="data__entry-update-button" class="data__entry-update-button" type="button" value="Update">
+      </div>
+    </script>
+  </body>
 </html>
