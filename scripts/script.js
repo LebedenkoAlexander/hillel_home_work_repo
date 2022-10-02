@@ -5,6 +5,7 @@ let todoListData = [];
 const SAVE_BTN_NAME = "save-btn";
 const DELETE_BTN_NAME = "delete-btn";
 const UPDATE_BTN_NAME = "update-btn";
+const INVALID_INPUT_CLASS = "input-invalid";
 //#endregion
 
 //#region setup
@@ -96,7 +97,7 @@ function deleteToDoObj(event) {
 
 function updateInputFields(event) {
   const toDoObjId = +event.target.parentNode.parentNode.id;
-  let element = todoListData.find((element) => element.id === toDoObjId);
+  const element = todoListData.find((element) => element.id === toDoObjId);
   firstNameInpElem.value = element.firstName;
   lastNameInpElem.value = element.lastName;
   phoneNumberInpElem.value = element.phoneNumber;
@@ -133,12 +134,12 @@ function inputsAreValid() {
 }
 
 function resetValidationResults() {
-  inpElemList.forEach((element) => element.classList.remove("input-invalid"));
+  inpElemList.forEach((element) => element.classList.remove(INVALID_INPUT_CLASS));
 }
 
 function validateInput(inputElem) {
   if (inputElem.value === "") {
-    inputElem.classList.add("input-invalid");
+    inputElem.classList.add(INVALID_INPUT_CLASS);
     return false;
   }
   return true;
