@@ -9,12 +9,57 @@
     <title>Document</title>
   </head>
   <body class="body">
-    <header class="header">
-    </header>
+    <header class="header"></header>
     <main class="main">
-      This is test
+      <div class="container">
+        <div class="todo-form" id="todo-form">
+          <table class="todo-list" id="todo-table">
+            <tbody>
+              <th class="todo-list__header">first name</th>
+              <th class="todo-list__header">last name</th>
+              <th class="todo-list__header">phone number</th>
+              <th class="todo-list__header">actions</th>
+            </tbody>
+            <tbody class="todo-list__rows" id="todo-list__rows"></tbody>
+          </table>
+          <div class="todo-list__form-inputs" id="todo-list__form-inputs">
+            <input
+              type="text"
+              name="firstName"
+              id="from-inputs__first-name-inp"
+              class="from-inputs__first-name-inp"
+            />
+            <input
+              type="text"
+              name="lastName"
+              id="from-inputs__last-name-inp"
+              class="from-inputs__last-name-inp"
+            />
+            <input
+              type="text"
+              name="phoneNumber"
+              id="from-inputs__phone-number-inp"
+              class="from-inputs__phone-number-inp"
+            />
+          </div>
+          <input type="hidden" name="id" id="todo-form__hidden-id" />
+          <button class="todo-form__save-btn" id="todo-form__save-btn" name="save-btn">
+            save
+          </button>
+        </div>
+      </div>
     </main>
-    <footer class="footer">
-    </footer>
+    <footer class="footer"></footer>
+    <script type="text/template" id="todo-list__row-template">
+      <tr id="{{_id_}}" class="todo-list__row">
+        <td class="todo-list__first-name-cell">{{_firstName_}}</td>
+        <td class="todo-list__last-name-cell">{{_lastName_}}</td>
+        <td class="todo-list__phone-number-cell">{{_phoneNumber_}}</td>
+        <td class="todo-list__action-cell">
+          <button class="action-cell__update-btn" id="update-btn{{_id_}}" name="update-btn">update</button>
+          <button class="action-cell__delete-btn" id="delete-btn{{_id_}}" name="delete-btn">delete</button>
+        </td>
+      </tr>
+    </script>
   </body>
 </html>

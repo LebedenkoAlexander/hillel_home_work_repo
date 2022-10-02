@@ -1,0 +1,24 @@
+.container {
+  margin: 0 auto;
+  width: 768px;
+}
+
+.todo-list__header {
+  text-transform: capitalize;
+}
+
+.action-cell__update-btn {
+  text-transform: capitalize;
+}
+.action-cell__delete-btn {
+  text-transform: capitalize;
+}
+
+.input-invalid {
+  background-color: red;
+}
+
+.todo-form__save-btn {
+  text-transform: capitalize;
+}
+/*# sourceMappingURL=style.css.map */

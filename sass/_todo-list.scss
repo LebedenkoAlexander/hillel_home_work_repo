@@ -1,0 +1,18 @@
+.todo-list {
+  &__header {
+    text-transform: capitalize;
+  }
+}
+
+.action-cell {
+  &__update-btn {
+    text-transform: capitalize;
+  }
+  &__delete-btn {
+    text-transform: capitalize;
+  }
+}
+
+.input-invalid {
+  background-color: red;
+}
