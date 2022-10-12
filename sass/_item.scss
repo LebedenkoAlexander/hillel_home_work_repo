@@ -1,0 +1,13 @@
+.item {
+  &__title {
+    border-bottom: 1px solid black;
+  }
+  &__body {
+    border-bottom: 1px solid blue;
+    &-collapse {
+        height: 0;
+        overflow: hidden;
+        border-bottom: none;
+      }
+  }
+}

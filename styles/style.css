@@ -1,0 +1,17 @@
+.container {
+  margin: 0 auto;
+  width: 768px;
+}
+
+.item__title {
+  border-bottom: 1px solid black;
+}
+.item__body {
+  border-bottom: 1px solid blue;
+}
+.item__body-collapse {
+  height: 0;
+  overflow: hidden;
+  border-bottom: none;
+}
+/*# sourceMappingURL=style.css.map */

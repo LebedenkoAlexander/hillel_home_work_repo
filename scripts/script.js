@@ -1,10 +1,5 @@
 "use strict";
 
-//#region data
-//#endregion
-
 //#region main
-//#endregion
-
-//#region functions
+const accordion = new Accordion(document.querySelector(".container"), 6);
 //#endregion
