@@ -1,0 +1,30 @@
+.todo-list__header {
+  text-transform: capitalize;
+}
+
+.action-cell__update-btn {
+  text-transform: capitalize;
+}
+.action-cell__delete-btn {
+  text-transform: capitalize;
+}
+
+.input-invalid {
+  background-color: red;
+}
+
+.todo-list__header {
+  text-transform: capitalize;
+}
+
+.action-cell__update-btn {
+  text-transform: capitalize;
+}
+.action-cell__delete-btn {
+  text-transform: capitalize;
+}
+
+.input-invalid {
+  background-color: red;
+}
+/*# sourceMappingURL=style.css.map */

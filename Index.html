@@ -4,17 +4,34 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./scripts/toDoClass.js" defer></script>
     <script src="./scripts/script.js" defer></script>
     <link rel="stylesheet" href="./styles/style.css" />
     <title>Document</title>
   </head>
   <body class="body">
-    <header class="header">
-    </header>
+    <header class="header"></header>
     <main class="main">
-      This is test
+      <div class="container">
+        <div class="todo-form" id="todo-form">
+          <table class="todo-list" id="todo-table">
+            <tbody>
+              <th class="todo-list__header">N</th>
+              <th class="todo-list__header">What to do</th>
+              <th class="todo-list__header">Status</th>
+            </tbody>
+            <tbody class="todo-list__rows" id="todo-list__rows"></tbody>
+          </table>
+        </div>
+      </div>
     </main>
-    <footer class="footer">
-    </footer>
+    <footer class="footer"></footer>
+    <script type="text/template" id="todo-list__row-template">
+      <tr id="{{_id_}}" class="todo-list__row">
+        <td class="todo-list__task-id-cell">{{_taskId_}}</td>
+        <td class="todo-list__task-title-cell">{{_taskTitle_}}</td>
+        <td class="todo-list__task-status-cell">{{_taskStatus_}}</td>
+      </tr>
+    </script>
   </body>
 </html>

@@ -8,3 +8,4 @@
 
 //#region functions
 //#endregion
+const toDoList = new toDo();
